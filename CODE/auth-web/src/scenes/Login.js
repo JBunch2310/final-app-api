@@ -20,32 +20,19 @@ export default function Login({ setToken, setIsUser }) {
       .then((data) => setToken(data.token))
       .catch((error) => alert(error));
   };
-  return (
+return (
     <>
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
-        <label>
-          Email:
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </label>
-        <br />
+        <label>Email:
+          <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
+        </label><br/>
+        <label>Password:
+          <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
+        </label><br/>
         <input type="submit" value="Login" />
-      </form>
-      <br />
-      <button onClick={() => setIsUser(false)}>Sign up</button>
+      </form><br/>
+      <button onClick={() => setIsUser(false)}>Sign Up</button>
     </>
-  );
+  )
 }
